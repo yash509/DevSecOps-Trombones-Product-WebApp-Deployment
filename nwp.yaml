@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: trombones-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: trombones
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: trombones
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: trombones
