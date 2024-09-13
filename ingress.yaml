@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: trombones-ingress
+spec:
+  rules:
+  - host: trombones
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: trombones-service
+            port:
+              number: 5000 #80
+      - path: /app
+        pathType: Prefix
+        backend:
+          service:
+            name: trombones-service
+            port:
+              number: 5000 #80
