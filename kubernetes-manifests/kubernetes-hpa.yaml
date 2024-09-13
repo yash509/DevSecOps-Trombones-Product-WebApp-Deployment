@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: pe-wa-hpa
+  name: trombones-hpa
   namespace: web-app
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: pe-wa-deployment
+    name: trombones-deployment
   minReplicas: 1
   maxReplicas: 5
   metrics:
