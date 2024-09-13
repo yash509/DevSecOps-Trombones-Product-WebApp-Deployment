@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trombones-deployment
+spec:
+  replicas: 6  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: trombones
+  template:
+    metadata:
+      labels:
+        app: trombones
+    spec:
+      containers:
+      - name: trombones
+        image: yash5090/trombones:latest
+        ports:
+        - containerPort: 5000
