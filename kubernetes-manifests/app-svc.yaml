@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pe-wa-service
+  name: trombones-service
   namespace: web-app
 spec:
   selector:
-    app: pe-wa
+    app: trombones
   ports:
     - protocol: TCP
       port: 5000
