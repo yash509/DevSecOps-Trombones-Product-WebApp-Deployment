@@ -18,11 +18,5 @@ spec:
           image: yash5090/trombones:latest # Replace with the actual image tag
           ports:
             - containerPort: 5000 # Replace with the port your Tetris game listens on
-          volumeMounts:
-          - name: trombones-storage
-            mountPath: /data  #Mount path inside the container
-      volumes:
-      - name: trombones-storage
-        persistentVolumeClaim:
-          claimName: trombones-pvc
+          
       
