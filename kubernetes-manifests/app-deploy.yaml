@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: trombones-deployment
-  namespace: web-app
 spec:
   replicas: 6 # You can adjust the number of replicas as needed
   selector:
